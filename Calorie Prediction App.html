@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- saved from url=(0835)https://storage.googleapis.com/eduarno-media-storage-prod/5976326372492980_File.html?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=central-device-apis%40appspot.gserviceaccount.com%2F20230423%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230423T192300Z&X-Goog-Expires=1800&X-Goog-SignedHeaders=host&X-Goog-Signature=969f9618834cc3d13d6347b27c0f7c5112aa1868f05bad36620b8c73fb7f3e13ee8b3cb42b46faa8f8e8139f935b86598bb3472241c1113e78d78cf6a8454e4567fac1453e1017974dcf8cc8ca28d8d0be9423d67e99ec3e4038fd2481584a5440fc807712612815970a73ea316a16d495f4b95688e50000396a7f59e67c15cc872fb74ac692fb76617d52049643de659b09af5ead45123ae5d35687b9d030f16608a2692a573a5392ed9b5471d2f4ebfb8cb77cadf0a6195bdb950f0c7314d8453e372720c1ddd2e1c709d403a638bd9bf88e714aaabed0cbb60b0c99d4a40f194567b7279b317ba39b978cf0896e4045b4c601a24e28db7e06f7cdacb13fde -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Calorie Prediction App</title>
+	<style>
+		body {
+			background-color: orange;
+		}
+
+		h1 {
+			text-align: center;
+			color: white;
+			font-size: 50px;
+			margin-top: 50px;
+		}
+
+		form {
+			margin-top: 50px;
+			text-align: center;
+		}
+
+		label {
+			font-size: 30px;
+			color: white;
+		}
+
+		input[type="number"] {
+			font-size: 25px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 10px;
+		}
+
+		input[type="submit"] {
+			font-size: 25px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: white;
+			color: black;
+			cursor: pointer;
+		}
+
+		.result {
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1106.0" data-gr-ext-installed="">
+	<h1>Calorie Prediction App</h1>
+
+	<form id="calorie-form">
+		<label for="age">Age (in years): </label>
+		<input type="number" id="age" name="age" required="">
+
+		<br>
+
+		<label for="height">Height (in cm): </label>
+		<input type="number" id="height" name="height" required="">
+
+		<br>
+
+		<label for="weight">Weight (in kg): </label>
+		<input type="number" id="weight" name="weight" required="">
+
+		<br>
+
+		<label for="duration">Duration (in minutes): </label>
+		<input type="number" id="duration" name="duration" required="">
+
+		<br>
+
+		<label for="heart_rate">Heart Rate (in bpm): </label>
+		<input type="number" id="heart_rate" name="heart_rate" required="">
+
+		<br>
+
+		<label for="body_temp">Body Temperature (in Celsius): </label>
+		<input type="number" id="body_temp" name="body_temp" required="">
+
+		<br>
+
+		<input type="submit" value="Predict Calories">
+	</form>
+
+	<div class="result" id="result"></div>
+
+	<script>
+		document.getElementById("calorie-form").addEventListener("submit", function(e) {
+			e.preventDefault();
+
+			var age = parseInt(document.getElementById("age").value);
+			var height = parseInt(document.getElementById("height").value);
+			var weight = parseInt(document.getElementById("weight").value);
+			var duration = parseInt(document.getElementById("duration").value);
+			var heart_rate = parseInt(document.getElementById("heart_rate").value);
+			var body_temp = parseInt(document.getElementById("body_temp").value);
+
+			var result = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+			result += (heart_rate * 0.5) - (duration * 0.7) + (body_temp * 0.1);
+
+			document.getElementById("result").innerHTML = "Calories burned: " + result.toFixed(2);
+		});
+	</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+  div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+</style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
